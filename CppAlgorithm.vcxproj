@@ -151,6 +151,7 @@
     <ClCompile Include="CppAlgorithm.cpp" />
     <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="MaximumProfit.cpp" />
+    <ClCompile Include="SelectionSort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugMenu.h" />
