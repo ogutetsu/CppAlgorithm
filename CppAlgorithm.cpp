@@ -5,6 +5,7 @@
 
 
 extern void MaximumProfit();
+extern void InsertionSort();
 
 int main()
 {
@@ -13,6 +14,7 @@ int main()
 	menu.SetExitNumber(99);
 
 	menu.AddMenu(std::make_tuple(1, "MaximumProfit", MaximumProfit));
+	menu.AddMenu(std::make_tuple(2, "InsertionSort", InsertionSort));
 
 
 	menu.Exec();

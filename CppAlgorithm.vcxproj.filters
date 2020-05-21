@@ -16,6 +16,9 @@
     <Filter Include="ソース ファイル\Order">
       <UniqueIdentifier>{cadf156c-cd62-4dc9-b104-3ef3f49c466a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Sort">
+      <UniqueIdentifier>{14f21b77-5984-45be-97ff-149cadf2ebe2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppAlgorithm.cpp">
@@ -23,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="MaximumProfit.cpp">
       <Filter>ソース ファイル\Order</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertionSort.cpp">
+      <Filter>ソース ファイル\Sort</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
