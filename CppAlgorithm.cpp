@@ -1,11 +1,18 @@
 ﻿// CppAlgorithm.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
 //
 
-#include <iostream>
+#include "DebugMenu.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    DebugMenu menu;
+
+	menu.SetExitNumber(99);
+
+
+	menu.Exec();
+
+	
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
