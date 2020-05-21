@@ -3,11 +3,16 @@
 
 #include "DebugMenu.h"
 
+
+extern void MaximumProfit();
+
 int main()
 {
     DebugMenu menu;
 
 	menu.SetExitNumber(99);
+
+	menu.AddMenu(std::make_tuple(1, "MaximumProfit", MaximumProfit));
 
 
 	menu.Exec();
