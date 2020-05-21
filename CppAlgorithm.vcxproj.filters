@@ -30,6 +30,9 @@
     <ClCompile Include="InsertionSort.cpp">
       <Filter>ソース ファイル\Sort</Filter>
     </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>ソース ファイル\Sort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugMenu.h">
