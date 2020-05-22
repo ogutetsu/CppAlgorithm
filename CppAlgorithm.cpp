@@ -8,6 +8,7 @@ extern void MaximumProfit();
 extern void InsertionSort();
 extern void BubbleSort();
 extern void SelectionSort();
+extern void StableSort();
 
 int main()
 {
@@ -19,6 +20,7 @@ int main()
 	menu.AddMenu(std::make_tuple(2, "InsertionSort", InsertionSort));
 	menu.AddMenu(std::make_tuple(3, "BubbleSort", BubbleSort));
 	menu.AddMenu(std::make_tuple(4, "SelectionSort", SelectionSort));
+	menu.AddMenu(std::make_tuple(5, "StableSort", StableSort));
 
 
 	menu.Exec();
