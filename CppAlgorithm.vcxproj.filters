@@ -39,6 +39,9 @@
     <ClCompile Include="StableSort.cpp">
       <Filter>ソース ファイル\Sort</Filter>
     </ClCompile>
+    <ClCompile Include="ShellSort.cpp">
+      <Filter>ソース ファイル\Sort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugMenu.h">
