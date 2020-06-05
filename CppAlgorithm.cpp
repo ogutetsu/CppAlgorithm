@@ -10,6 +10,7 @@ extern void BubbleSort();
 extern void SelectionSort();
 extern void StableSort();
 extern void ShellSort();
+extern void Stack();
 
 int main()
 {
@@ -23,6 +24,7 @@ int main()
 	menu.AddMenu(std::make_tuple(4, "SelectionSort", SelectionSort));
 	menu.AddMenu(std::make_tuple(5, "StableSort", StableSort));
 	menu.AddMenu(std::make_tuple(6, "ShellSort", ShellSort));
+	menu.AddMenu(std::make_tuple(7, "Stack", Stack));
 
 
 	menu.Exec();

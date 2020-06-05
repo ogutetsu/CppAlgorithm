@@ -19,6 +19,9 @@
     <Filter Include="ソース ファイル\Sort">
       <UniqueIdentifier>{14f21b77-5984-45be-97ff-149cadf2ebe2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\DataStructure">
+      <UniqueIdentifier>{cd39ea91-2676-4165-ba77-2b902f618e17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppAlgorithm.cpp">
@@ -41,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="ShellSort.cpp">
       <Filter>ソース ファイル\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>ソース ファイル\DataStructure</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
