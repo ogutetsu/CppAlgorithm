@@ -48,6 +48,9 @@
     <ClCompile Include="Stack.cpp">
       <Filter>ソース ファイル\DataStructure</Filter>
     </ClCompile>
+    <ClCompile Include="Queue.cpp">
+      <Filter>ソース ファイル\DataStructure</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugMenu.h">
