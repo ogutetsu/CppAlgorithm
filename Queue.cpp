@@ -1,4 +1,5 @@
 #include <iostream>
+#include <set>
 #include <tuple>
 #include <vector>
 
@@ -13,7 +14,7 @@ public:
 	QueueData(int buffnum = 5) { head = 0; tail = 0; ring = buffnum; q.resize(buffnum); }
 
 	void Enqueue(rounddata v) { q[tail++] = v; OverflowTail(); }
-	rounddata Dequque() { return q[head++]; OverflowHead(); }
+	rounddata Dequque() { OverflowHead(); return q[head++];  }
 
 	bool IsEmpty() { return head == tail; }
 	
@@ -23,8 +24,8 @@ private:
 	//îzóÒêîÇÕ100,000à»â∫Ç‹Ç≈Ç»ÇÃÇ≈å≈íËîzóÒÇ≈Ç‡ó«Ç¢Ç©Ç‡
 	vector<rounddata> q;
 
-	void OverflowTail() { if(tail > ring) tail = 0; }
-	void OverflowHead() { if (head > ring) head = 0; }
+	void OverflowTail() { if(tail >= ring) tail = 0; }
+	void OverflowHead() { if (head >= ring) head = 0; }
 	
 };
 
@@ -46,7 +47,23 @@ void Queue()
 		
 	}
 
+	int ptime = 0;
 	
+	while(!q.IsEmpty())
+	{
+		rounddata r = q.Dequque();
+		int t = get<1>(r);
+		t -= Q;
+		if (t > 0) {
+			q.Enqueue(make_tuple(get<0>(r), t));
+			ptime += Q;
+		}
+		else
+		{
+			ptime += t;
+			cout << get<0>(r) << " " << ptime << endl;
+ 		}
+	}
 	
 	
 	
