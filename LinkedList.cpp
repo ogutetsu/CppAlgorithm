@@ -1,5 +1,8 @@
 #include <iostream>
 
+using namespace std;
+
+
 template<class T>
 class ChainList
 {
@@ -23,6 +26,8 @@ class LinkedListData
 public:
 	LinkedListData()
 	{
+		first = nullptr;
+		last = nullptr;
 	}
 
 	//リストの先頭にデータを追加
@@ -88,6 +93,21 @@ public:
 	}
 
 
+	//出力
+	void Print()
+	{
+		ChainList<T>* node = first;
+		while(node)
+		{
+			cout << node->GetValue() << " ";
+			node = node->GetTail();
+		}
+		cout << endl;
+	}
+	
+
+
+	//テスト用メソッド
 	T GetTopValue()
 	{
 		return first->GetValue();
@@ -115,5 +135,37 @@ private:
 
 void LinkedList()
 {
+	int N;
+	cin >> N;
+
+	LinkedListData<int> data;
+
+	for(int i = 0; i < N; i++)
+	{
+		string cmd;
+		int v;
+		cin >> cmd >> v;
+
+		if(cmd == "insert")
+		{
+			data.Insert(v);
+		}
+		else if(cmd == "delete")
+		{
+			data.Delete(v);
+		}
+		else if(cmd == "deleteFirst")
+		{
+			data.DeleteFirst();
+		}
+		else if(cmd == "deleteLast")
+		{
+			data.DeleteLast();
+		}
+
+	}
+
+	data.Print();
+	
 	
 }
