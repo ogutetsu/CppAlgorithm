@@ -150,6 +150,7 @@
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="CppAlgorithm.cpp" />
     <ClCompile Include="InsertionSort.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="MaximumProfit.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="SelectionSort.cpp" />

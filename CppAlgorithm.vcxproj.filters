@@ -51,6 +51,9 @@
     <ClCompile Include="Queue.cpp">
       <Filter>ソース ファイル\DataStructure</Filter>
     </ClCompile>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>ソース ファイル\DataStructure</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugMenu.h">

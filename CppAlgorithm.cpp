@@ -12,6 +12,7 @@ extern void StableSort();
 extern void ShellSort();
 extern void Stack();
 extern void Queue();
+extern void LinkedList();
 
 int main()
 {
@@ -27,6 +28,7 @@ int main()
 	menu.AddMenu(std::make_tuple(6, "ShellSort", ShellSort));
 	menu.AddMenu(std::make_tuple(7, "Stack", Stack));
 	menu.AddMenu(std::make_tuple(8, "Queue", Queue));
+	menu.AddMenu(std::make_tuple(9, "LinkedList", LinkedList));
 
 
 	menu.Exec();
