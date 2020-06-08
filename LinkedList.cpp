@@ -7,16 +7,16 @@ template<class T>
 class ChainList
 {
 public:
-	ChainList(T v) : value(v) { head = nullptr; tail = nullptr; }
-	ChainList* GetHead() { return head; }
-	ChainList* GetTail() { return tail; }
-	void SetHead(ChainList* l) { head = l; }
-	void SetTail(ChainList* l) { tail = l; }
+	ChainList(T v) : value(v) { prev = nullptr; next = nullptr; }
+	ChainList* GetPrev() { return prev; }
+	ChainList* GetNext() { return next; }
+	void SetPrev(ChainList* l) { prev = l; }
+	void SetNext(ChainList* l) { next = l; }
 	T GetValue() { return value; }
 
 private:
-	ChainList* head;
-	ChainList* tail;
+	ChainList* prev;
+	ChainList* next;
 	T value;
 };
 
@@ -40,9 +40,9 @@ public:
 		}
 		else
 		{
-			first->SetHead(new ChainList<T>(v));
-			first->GetHead()->SetTail(first);
-			first = first->GetHead();
+			first->SetPrev(new ChainList<T>(v));
+			first->GetPrev()->SetNext(first);
+			first = first->GetPrev();
 		}
 	}
 
@@ -56,18 +56,18 @@ public:
 			{
 				break;
 			}
-			top = top->GetTail();
+			top = top->GetNext();
 			if (top == nullptr) return;
 		}
-		ChainList<T>* h = top->GetHead();
-		ChainList<T>* t = top->GetTail();
-		if (h) h->SetTail(t);
+		ChainList<T>* h = top->GetPrev();
+		ChainList<T>* t = top->GetNext();
+		if (h) h->SetNext(t);
 		if (t)
 		{
-			t->SetHead(h);
+			t->SetPrev(h);
 			if (t == last)
 			{
-				last = t->GetHead();
+				last = t->GetPrev();
 			}
 
 		}
@@ -78,8 +78,8 @@ public:
 	void DeleteFirst()
 	{
 		ChainList<T>* l = first;
-		first->GetTail()->SetHead(nullptr);
-		first = first->GetTail();
+		first->GetNext()->SetPrev(nullptr);
+		first = first->GetNext();
 		delete l;
 	}
 
@@ -87,8 +87,8 @@ public:
 	void DeleteLast()
 	{
 		ChainList<T>* l = last;
-		last->GetHead()->SetTail(nullptr);
-		last = last->GetHead();
+		last->GetPrev()->SetNext(nullptr);
+		last = last->GetPrev();
 		delete l;
 	}
 
@@ -100,7 +100,7 @@ public:
 		while(node)
 		{
 			cout << node->GetValue() << " ";
-			node = node->GetTail();
+			node = node->GetNext();
 		}
 		cout << endl;
 	}
