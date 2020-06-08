@@ -4,7 +4,8 @@
 #include "DebugMenu.h"
 
 
-extern void MaximumProfit();
+DEBUGEXTERN(MaximumProfit)
+//extern void MaximumProfit();
 extern void InsertionSort();
 extern void BubbleSort();
 extern void SelectionSort();
@@ -20,15 +21,15 @@ int main()
 
 	menu.SetExitNumber(99);
 
-	menu.AddMenu(std::make_tuple(1, "MaximumProfit", MaximumProfit));
-	menu.AddMenu(std::make_tuple(2, "InsertionSort", InsertionSort));
-	menu.AddMenu(std::make_tuple(3, "BubbleSort", BubbleSort));
-	menu.AddMenu(std::make_tuple(4, "SelectionSort", SelectionSort));
-	menu.AddMenu(std::make_tuple(5, "StableSort", StableSort));
-	menu.AddMenu(std::make_tuple(6, "ShellSort", ShellSort));
-	menu.AddMenu(std::make_tuple(7, "Stack", Stack));
-	menu.AddMenu(std::make_tuple(8, "Queue", Queue));
-	menu.AddMenu(std::make_tuple(9, "LinkedList", LinkedList));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(1, "MaximumProfit", MaximumProfit));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(2, "InsertionSort", InsertionSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(3, "BubbleSort", BubbleSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(4, "SelectionSort", SelectionSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(5, "StableSort", StableSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(6, "ShellSort", ShellSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(7, "Stack", Stack));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(8, "Queue", Queue));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(9, "LinkedList", LinkedList));
 
 
 	menu.Exec();
