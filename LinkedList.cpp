@@ -24,23 +24,27 @@ public:
 	LinkedListData()
 	{
 	}
+
+	//リストの先頭にデータを追加
 	void Insert(T v)
 	{
-		if (l == nullptr)
+		if (first == nullptr)
 		{
-			l = new ChainList<T>(v);
+			first = new ChainList<T>(v);
+			last = first;
 		}
 		else
 		{
-			l->SetHead(new ChainList<T>(v));
-			l->GetHead()->SetTail(l);
-			l = l->GetHead();
+			first->SetHead(new ChainList<T>(v));
+			first->GetHead()->SetTail(first);
+			first = first->GetHead();
 		}
 	}
 
+	//keyを持つ最初の要素を削除する
 	void Delete(T key)
 	{
-		ChainList<T>* top = l;
+		ChainList<T>* top = first;
 		while (top)
 		{
 			if (top->GetValue() == key)
@@ -53,23 +57,55 @@ public:
 		ChainList<T>* h = top->GetHead();
 		ChainList<T>* t = top->GetTail();
 		if (h) h->SetTail(t);
-		if (t) t->SetHead(h);
+		if (t)
+		{
+			t->SetHead(h);
+			if (t == last)
+			{
+				last = t->GetHead();
+			}
+
+		}
 		delete top;
 	}
 
+	//先頭の要素を削除
+	void DeleteFirst()
+	{
+		ChainList<T>* l = first;
+		first->GetTail()->SetHead(nullptr);
+		first = first->GetTail();
+		delete l;
+	}
+
+	//末尾の要素を削除
+	void DeleteLast()
+	{
+		ChainList<T>* l = last;
+		last->GetHead()->SetTail(nullptr);
+		last = last->GetHead();
+		delete l;
+	}
 
 
 	T GetTopValue()
 	{
-		return l->GetValue();
+		return first->GetValue();
+	}
+
+	T GetLastValue()
+	{
+		return last->GetValue();
 	}
 
 
 
-
 private:
-	ChainList<T>* l;
+	//先頭のデータ
+	ChainList<T>* first;
 
+	//末尾のデータ
+	ChainList<T>* last;
 
 };
 
