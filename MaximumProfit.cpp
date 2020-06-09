@@ -6,6 +6,7 @@ using namespace std;
 static const int MAX = 200'000;
 
 
+
 void MaximumProfit()
 {
 	int R[MAX], n;
@@ -31,3 +32,7 @@ void MaximumProfit()
 }
 
 
+void MaximumProfitTest()
+{
+
+}

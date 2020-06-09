@@ -15,7 +15,7 @@
 #define DEBUGEXTERN_NOTEST(func) extern void func();
 
 
-#define DEBUGTUPLE(no, name, func) std::make_tuple((no), (name), func, func##Test, nullptr )
+#define DEBUGTUPLE(no, name, func) std::make_tuple((no), (name), func, func##Test, (ITestGen*)(new func##TestGen ()) )
 
 //テストメソッドを使用しない場合 (出来るだけテストメソッドの実装は行うべき)
 #define DEBUGTUPLE_NOTEST(no, name, func) std::make_tuple((no), (name), func, nullptr, nullptr )
@@ -72,9 +72,13 @@ public:
 				{//実行
 					if (std::get<2>(*f) != nullptr) std::get<2>(*f)();
 				}
-				else
+				else if(op == 1)
 				{//テストメソッド実行
 					if (std::get<3>(*f) != nullptr) std::get<3>(*f)();
+				}
+				else if(op == 9)
+				{//テスト生成
+					if (std::get<4>(*f) != nullptr) std::get<4>(*f)->Generate();
 				}
 			}
 			std::cout << std::endl;

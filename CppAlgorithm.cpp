@@ -21,7 +21,7 @@ int main()
 
 	menu.SetExitNumber(99);
 
-	menu.AddMenu(DEBUGTUPLE_NOTEST(1, "MaximumProfit", MaximumProfit));
+	menu.AddMenu(DEBUGTUPLE(1, "MaximumProfit", MaximumProfit));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(2, "InsertionSort", InsertionSort));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(3, "BubbleSort", BubbleSort));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(4, "SelectionSort", SelectionSort));
