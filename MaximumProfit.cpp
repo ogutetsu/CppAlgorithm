@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <filesystem>
 
 #include "TestGen/TestGen.h"
 
@@ -35,16 +36,23 @@ void MaximumProfit()
 
 void MaximumProfitTest()
 {
-	MaximumProfitTestGen testgen;
-	string filename = testgen.TestFileMaker("MaximumProfit", 1);
-	ifstream fi(filename);
+	using namespace std::filesystem;
+	directory_iterator dit("TestResource/MaximumProfit/"), end;
+	std::error_code err;
+	for(; dit != end && !err; dit.increment(err))
+	{
+		string filename = (*dit).path().string();
+		cout << filename << endl;
 
-	auto bk = cin.rdbuf();
-		
-	cin.rdbuf(fi.rdbuf());
+		ifstream fi(filename);
 	
-	MaximumProfit();
+		auto bk = cin.rdbuf();
 
-	cin.rdbuf(bk);
+		cin.rdbuf(fi.rdbuf());
+
+		MaximumProfit();
+
+		cin.rdbuf(bk);
+	}
 	
 }
