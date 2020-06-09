@@ -5,15 +5,14 @@
 
 
 DEBUGEXTERN(MaximumProfit)
-//extern void MaximumProfit();
-extern void InsertionSort();
-extern void BubbleSort();
-extern void SelectionSort();
-extern void StableSort();
-extern void ShellSort();
-extern void Stack();
-extern void Queue();
-extern void LinkedList();
+DEBUGEXTERN_NOTEST(InsertionSort)
+DEBUGEXTERN_NOTEST(BubbleSort)
+DEBUGEXTERN_NOTEST(SelectionSort)
+DEBUGEXTERN_NOTEST(StableSort)
+DEBUGEXTERN_NOTEST(ShellSort)
+DEBUGEXTERN_NOTEST(Stack)
+DEBUGEXTERN_NOTEST(Queue)
+DEBUGEXTERN_NOTEST(LinkedList)
 
 int main()
 {
@@ -21,15 +20,15 @@ int main()
 
 	menu.SetExitNumber(99);
 
-	menu.AddMenu(DEBUGTUPLE(1, "MaximumProfit", MaximumProfit));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(2, "InsertionSort", InsertionSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(3, "BubbleSort", BubbleSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(4, "SelectionSort", SelectionSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(5, "StableSort", StableSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(6, "ShellSort", ShellSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(7, "Stack", Stack));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(8, "Queue", Queue));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(9, "LinkedList", LinkedList));
+	menu.AddMenu(DEBUGTUPLE(1, MaximumProfit));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(2, InsertionSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(3, BubbleSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(4, SelectionSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(5, StableSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(6, ShellSort));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(7, Stack));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(8, Queue));
+	menu.AddMenu(DEBUGTUPLE_NOTEST(9, LinkedList));
 
 
 	menu.Exec();

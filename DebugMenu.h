@@ -15,10 +15,10 @@
 #define DEBUGEXTERN_NOTEST(func) extern void func();
 
 
-#define DEBUGTUPLE(no, name, func) std::make_tuple((no), (name), func, func##Test, (ITestGen*)(new func##TestGen ()) )
+#define DEBUGTUPLE(no, func) std::make_tuple((no), #func, func, func##Test, (ITestGen*)(new func##TestGen ()) )
 
 //テストメソッドを使用しない場合 (出来るだけテストメソッドの実装は行うべき)
-#define DEBUGTUPLE_NOTEST(no, name, func) std::make_tuple((no), (name), func, nullptr, nullptr )
+#define DEBUGTUPLE_NOTEST(no, func) std::make_tuple((no), #func, func, nullptr, nullptr )
 
 
 typedef std::tuple<int, std::string, std::function<void(void)>, std::function<void(void)>, ITestGen*> callname;
