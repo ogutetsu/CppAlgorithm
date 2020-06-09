@@ -3,7 +3,7 @@
 #include "../TestGenInterface.h"
 
 
-class MaximumProfitTestGen : ITestGen
+class MaximumProfitTestGen : public ITestGen
 {
 public:
 	void Generate() override;

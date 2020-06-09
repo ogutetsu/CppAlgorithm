@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
+#include "TestGen/TestGen.h"
 
 using namespace std;
 static const int MAX = 200'000;
@@ -34,5 +35,16 @@ void MaximumProfit()
 
 void MaximumProfitTest()
 {
+	MaximumProfitTestGen testgen;
+	string filename = testgen.TestFileMaker("MaximumProfit", 1);
+	ifstream fi(filename);
 
+	auto bk = cin.rdbuf();
+		
+	cin.rdbuf(fi.rdbuf());
+	
+	MaximumProfit();
+
+	cin.rdbuf(bk);
+	
 }

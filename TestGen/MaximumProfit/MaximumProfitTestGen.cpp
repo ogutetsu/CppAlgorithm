@@ -14,7 +14,13 @@ void MaximumProfitTestGen::Generate()
 
 	string file = TestFileMaker("MaximumProfit", 1);
 	cout << file;
+
+	ofstream of(file);
+
+	of << 2 << endl;
+	of << 10 << endl << 20 << endl;
 	
+
 	
 }
 
