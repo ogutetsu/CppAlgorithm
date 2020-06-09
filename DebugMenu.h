@@ -4,19 +4,24 @@
 #include <tuple>
 #include <vector>
 
+
+#include "TestGen/TestGen.h"
+
+
+
 //関数名とテストメソッドのextern宣言するdefine
 #define DEBUGEXTERN(func) extern void func(); extern void func##Test ();
 //DEBUGEXTERNのTestメソッドを宣言しないもの 実装していないのにexternするのも気持ち悪いので用意してます
 #define DEBUGEXTERN_NOTEST(func) extern void func();
 
 
-#define DEBUGTUPLE(no, name, func) std::make_tuple((no), (name), func, func##Test )
+#define DEBUGTUPLE(no, name, func) std::make_tuple((no), (name), func, func##Test, nullptr )
 
 //テストメソッドを使用しない場合 (出来るだけテストメソッドの実装は行うべき)
-#define DEBUGTUPLE_NOTEST(no, name, func) std::make_tuple((no), (name), func, nullptr )
+#define DEBUGTUPLE_NOTEST(no, name, func) std::make_tuple((no), (name), func, nullptr, nullptr )
 
 
-typedef std::tuple<int, std::string, std::function<void(void)>, std::function<void(void)>> callname;
+typedef std::tuple<int, std::string, std::function<void(void)>, std::function<void(void)>, ITestGen*> callname;
 
 class DebugMenu
 {
@@ -33,7 +38,7 @@ public:
 
 	void Exec()
 	{
-		AddMenu(std::make_tuple(exitNumber, "Exit", nullptr, nullptr));
+		AddMenu(std::make_tuple(exitNumber, "Exit", nullptr, nullptr, nullptr));
 		while (1)
 		{
 			for (auto t : table)

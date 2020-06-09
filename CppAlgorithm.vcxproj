@@ -162,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="DebugMenu.h" />
     <ClInclude Include="TestGen\MaximumProfit\MaximumProfitTestGen.h" />
+    <ClInclude Include="TestGen\TestGen.h" />
     <ClInclude Include="TestGen\TestGenInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

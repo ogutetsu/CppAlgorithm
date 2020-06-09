@@ -80,5 +80,8 @@
     <ClInclude Include="TestGen\MaximumProfit\MaximumProfitTestGen.h">
       <Filter>ヘッダー ファイル\TestGen\MaximumProfit</Filter>
     </ClInclude>
+    <ClInclude Include="TestGen\TestGen.h">
+      <Filter>ヘッダー ファイル\TestGen</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
