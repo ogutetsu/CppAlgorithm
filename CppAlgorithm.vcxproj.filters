@@ -25,6 +25,15 @@
     <Filter Include="ヘッダー ファイル\TestGen">
       <UniqueIdentifier>{c7cffea8-b9ef-4f9c-bf1f-1d0cefd13530}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\TestGen\MaximumProfit">
+      <UniqueIdentifier>{7395e2df-f96d-4167-b2ff-c40b193dabbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\TestGen">
+      <UniqueIdentifier>{e038f483-2b24-4ef7-80eb-a71ff6df3e41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\TestGen\MaximumProfit">
+      <UniqueIdentifier>{f81a40e6-ddec-4e4f-b7e1-202a35ce9b77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppAlgorithm.cpp">
@@ -57,6 +66,9 @@
     <ClCompile Include="LinkedList.cpp">
       <Filter>ソース ファイル\DataStructure</Filter>
     </ClCompile>
+    <ClCompile Include="TestGen\MaximumProfit\MaximumProfitTestGen.cpp">
+      <Filter>ソース ファイル\TestGen\MaximumProfit</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugMenu.h">
@@ -64,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="TestGen\TestGenInterface.h">
       <Filter>ヘッダー ファイル\TestGen</Filter>
+    </ClInclude>
+    <ClInclude Include="TestGen\MaximumProfit\MaximumProfitTestGen.h">
+      <Filter>ヘッダー ファイル\TestGen\MaximumProfit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
