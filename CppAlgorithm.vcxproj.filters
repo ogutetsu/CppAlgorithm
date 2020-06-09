@@ -22,6 +22,9 @@
     <Filter Include="ソース ファイル\DataStructure">
       <UniqueIdentifier>{cd39ea91-2676-4165-ba77-2b902f618e17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\TestGen">
+      <UniqueIdentifier>{c7cffea8-b9ef-4f9c-bf1f-1d0cefd13530}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppAlgorithm.cpp">
@@ -58,6 +61,9 @@
   <ItemGroup>
     <ClInclude Include="DebugMenu.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TestGen\TestGenInterface.h">
+      <Filter>ヘッダー ファイル\TestGen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
