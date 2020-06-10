@@ -12,7 +12,7 @@ DEBUGEXTERN_NOTEST(StableSort)
 DEBUGEXTERN_NOTEST(ShellSort)
 DEBUGEXTERN_NOTEST(Stack)
 DEBUGEXTERN_NOTEST(Queue)
-DEBUGEXTERN_NOTEST(LinkedList)
+DEBUGEXTERN(LinkedList)
 
 int main()
 {
@@ -28,7 +28,7 @@ int main()
 	menu.AddMenu(DEBUGTUPLE_NOTEST(6, ShellSort));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(7, Stack));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(8, Queue));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(9, LinkedList));
+	menu.AddMenu(DEBUGTUPLE(9, LinkedList));
 
 
 	menu.Exec();

@@ -1,4 +1,8 @@
 #include <iostream>
+#include <filesystem>
+
+#include "TestGen/TestGen.h"
+
 
 using namespace std;
 
@@ -168,4 +172,29 @@ void LinkedList()
 	data.Print();
 	
 	
+}
+
+
+void LinkedListTest()
+{
+	using namespace std::filesystem;
+	directory_iterator dit("TestResource/LinkedList/"), end;
+	std::error_code err;
+	for (; dit != end && !err; dit.increment(err))
+	{
+		string filename = (*dit).path().string();
+		cout << filename << endl;
+
+		ifstream fi(filename);
+
+		auto bk = cin.rdbuf();
+
+		cin.rdbuf(fi.rdbuf());
+
+		{
+			ScopeTimer timer(filename.c_str());
+			LinkedList();
+		}
+		cin.rdbuf(bk);
+	}
 }
