@@ -50,8 +50,10 @@ void MaximumProfitTest()
 
 		cin.rdbuf(fi.rdbuf());
 
-		MaximumProfit();
-
+		{
+			ScopeTimer timer(filename.c_str());
+			MaximumProfit();
+		}
 		cin.rdbuf(bk);
 	}
 	
