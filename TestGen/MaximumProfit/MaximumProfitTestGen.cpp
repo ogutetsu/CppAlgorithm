@@ -2,6 +2,7 @@
 #include "MaximumProfitTestGen.h"
 
 #include <iostream>
+#include <random>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ void MaximumProfitTestGen::Generate()
 	Test1();
 	Test2();
 	Test3();
-
+	Test4();
 	
 }
 
@@ -55,6 +56,29 @@ void MaximumProfitTestGen::Test3()
 	of << 4 << endl;
 	of << 3 << endl;
 	of << 2 << endl;
+	
+}
+
+void MaximumProfitTestGen::Test4()
+{
+	string file = TestFileMaker("MaximumProfit", 4);
+
+	ofstream of(file);
+
+	int N = 200'000;
+	int R = 10'000'000'000;
+	of << N << endl;
+
+
+	std::random_device seed;
+	std::mt19937_64 engine(seed());
+	std::uniform_int_distribution<int> dist(0, R);
+	for(int i = 0; i < N; i++)
+	{
+		//ランダムに数値を求める
+		of << dist(engine) << endl;
+	}
+	
 	
 }
 
