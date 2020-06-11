@@ -69,7 +69,7 @@ public:
 			{
 				auto number = std::get<0>(*f);
 
-				std::cout << "select : " << std::get<1>(*f) << std::endl;
+				std::cout << "select : " << std::get<1>(*f)->GetName() << std::endl;
 				if (op == 0)
 				{//実行
 					std::get<1>(*f)->Run();
