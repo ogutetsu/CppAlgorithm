@@ -1,4 +1,6 @@
-﻿#include <functional>
+﻿#include "InsertionSort.h"
+
+#include <functional>
 #include <iostream>
 
 
@@ -7,9 +9,8 @@ using namespace std;
 
 //最悪のケースでは O(N²)になる
 
-void InsertionSort()
+int InsertionSort::Run()
 {
-
 	function<void(int[], int)> trace = [](int* A, int N)
 	{
 		int i;
@@ -38,7 +39,7 @@ void InsertionSort()
 		}
 	};
 
-	int N, i, j;
+	int N, i;
 	int A[100];
 
 	cout << "個数を入力 -> ";
@@ -51,7 +52,11 @@ void InsertionSort()
 	trace(A, N);
 	insertionSort(A, N);
 
-	
+	return 0;
+}
+
+void InsertionSort::TestGen()
+{
 }
 
 

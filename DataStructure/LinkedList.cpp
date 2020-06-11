@@ -1,7 +1,7 @@
+ï»¿#include "LinkedList.h"
+
 #include <iostream>
 #include <filesystem>
-
-#include "TestGen/TestGen.h"
 
 
 using namespace std;
@@ -34,7 +34,7 @@ public:
 		last = nullptr;
 	}
 
-	//ƒŠƒXƒg‚Ìæ“ª‚Éƒf[ƒ^‚ğ’Ç‰Á
+	//ãƒªã‚¹ãƒˆã®å…ˆé ­ã«ãƒ‡ãƒ¼ã‚¿ã‚’è¿½åŠ 
 	void Insert(T v)
 	{
 		if (first == nullptr)
@@ -50,7 +50,7 @@ public:
 		}
 	}
 
-	//key‚ğ‚ÂÅ‰‚Ì—v‘f‚ğíœ‚·‚é
+	//keyã‚’æŒã¤æœ€åˆã®è¦ç´ ã‚’å‰Šé™¤ã™ã‚‹
 	void Delete(T key)
 	{
 		ChainList<T>* top = first;
@@ -78,7 +78,7 @@ public:
 		delete top;
 	}
 
-	//æ“ª‚Ì—v‘f‚ğíœ
+	//å…ˆé ­ã®è¦ç´ ã‚’å‰Šé™¤
 	void DeleteFirst()
 	{
 		ChainList<T>* l = first;
@@ -87,7 +87,7 @@ public:
 		delete l;
 	}
 
-	//––”ö‚Ì—v‘f‚ğíœ
+	//æœ«å°¾ã®è¦ç´ ã‚’å‰Šé™¤
 	void DeleteLast()
 	{
 		ChainList<T>* l = last;
@@ -97,7 +97,7 @@ public:
 	}
 
 
-	//o—Í
+	//å‡ºåŠ›
 	void Print()
 	{
 		ChainList<T>* node = first;
@@ -111,7 +111,7 @@ public:
 	
 
 
-	//ƒeƒXƒg—pƒƒ\ƒbƒh
+	//ãƒ†ã‚¹ãƒˆç”¨ãƒ¡ã‚½ãƒƒãƒ‰
 	T GetTopValue()
 	{
 		return first->GetValue();
@@ -125,10 +125,10 @@ public:
 
 
 private:
-	//æ“ª‚Ìƒf[ƒ^
+	//å…ˆé ­ã®ãƒ‡ãƒ¼ã‚¿
 	ChainList<T>* first;
 
-	//––”ö‚Ìƒf[ƒ^
+	//æœ«å°¾ã®ãƒ‡ãƒ¼ã‚¿
 	ChainList<T>* last;
 
 };
@@ -136,8 +136,7 @@ private:
 
 
 
-
-void LinkedList()
+int LinkedList::Run()
 {
 	int N;
 	cin >> N;
@@ -171,30 +170,30 @@ void LinkedList()
 
 	data.Print();
 	
-	
+	return 0;
 }
 
-
-void LinkedListTest()
+void LinkedList::TestGen()
 {
-	using namespace std::filesystem;
-	directory_iterator dit("TestResource/LinkedList/"), end;
-	std::error_code err;
-	for (; dit != end && !err; dit.increment(err))
-	{
-		string filename = (*dit).path().string();
-		cout << filename << endl;
-
-		ifstream fi(filename);
-
-		auto bk = cin.rdbuf();
-
-		cin.rdbuf(fi.rdbuf());
-
-		{
-			ScopeTimer timer(filename.c_str());
-			LinkedList();
-		}
-		cin.rdbuf(bk);
-	}
+	Test1();
 }
+
+void LinkedList::Test1()
+{
+	string file = TestFileMaker("LinkedList", 1);
+
+	ofstream of(file);
+
+	of << 7 << endl;
+	of << "insert " << "5" << endl;
+	of << "insert " << "2" << endl;
+	of << "insert " << "3" << endl;
+	of << "insert " << "1" << endl;
+	of << "delete " << "3" << endl;
+	of << "insert " << "6" << endl;
+	of << "delete " << "5" << endl;
+
+}
+
+
+

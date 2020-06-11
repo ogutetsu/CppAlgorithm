@@ -1,13 +1,15 @@
-﻿#include <functional>
+﻿#include "BubbleSort.h"
+
+#include <functional>
 #include <iostream>
 
 using namespace std;
 
 
 //最悪のケースでは O(N²)になる
-
-void BubbleSort()
+int BubbleSort::Run()
 {
+	
 	function<int(int[], int)> sort = [](int* A, int N)
 	{
 		int sw = 0;
@@ -46,6 +48,11 @@ void BubbleSort()
 	}
 	cout << endl;
 	cout << "交換回数 : " << sw << endl;
-	
+
+	return 0;
+}
+
+void BubbleSort::TestGen()
+{
 }
 

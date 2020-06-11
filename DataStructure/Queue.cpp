@@ -1,3 +1,5 @@
+ï»¿#include "Queue.h"
+
 #include <iostream>
 #include <set>
 #include <tuple>
@@ -8,7 +10,7 @@ using namespace std;
 
 typedef tuple<string, int> rounddata;
 
-//ƒŠƒ“ƒOƒoƒbƒtƒ@•û®‚ÌƒLƒ…[
+//ãƒªãƒ³ã‚°ãƒãƒƒãƒ•ã‚¡æ–¹å¼ã®ã‚­ãƒ¥ãƒ¼
 class QueueData
 {
 public:
@@ -30,34 +32,35 @@ public:
 
 	bool IsEmpty() { return capacity == 0; }
 
-	//ˆÈ‰º‚ÍƒeƒXƒg—pƒƒ\ƒbƒh
+	//ä»¥ä¸‹ã¯ãƒ†ã‚¹ãƒˆç”¨ãƒ¡ã‚½ãƒƒãƒ‰
 	int GetHead() { return head; }
 	int GetTail() { return tail; }
 
 private:
 	int head, tail;
 	int ring;
-	//—v‘f‚ª‚ ‚é‚©”»’è‚·‚é‚½‚ß‚Ì‚à‚Ì
+	//è¦ç´ ãŒã‚ã‚‹ã‹åˆ¤å®šã™ã‚‹ãŸã‚ã®ã‚‚ã®
 	int capacity;
-	//”z—ñ”‚Í100,000ˆÈ‰º‚Ü‚Å‚È‚Ì‚ÅŒÅ’è”z—ñ‚Å‚à—Ç‚¢‚©‚à
+	//é…åˆ—æ•°ã¯100,000ä»¥ä¸‹ã¾ã§ãªã®ã§å›ºå®šé…åˆ—ã§ã‚‚è‰¯ã„ã‹ã‚‚
 	vector<rounddata> q;
 
 
 };
 
-void Queue()
+
+int Queue::Run()
 {
 	int N, Q;
 
-	//“ü—Í—á
-	cout << "(ƒvƒƒZƒX”) (ƒNƒIƒ“ƒ^ƒ€ŠÔ)" << endl;
+	//å…¥åŠ›ä¾‹
+	cout << "(ãƒ—ãƒ­ã‚»ã‚¹æ•°) (ã‚¯ã‚ªãƒ³ã‚¿ãƒ æ™‚é–“)" << endl;
 	cout << "2 100" << endl;
 	cout << "name1 250" << endl;
 	cout << "name2 80" << endl;
 	
 	cout << endl;
 	
-	//ƒvƒƒZƒX”N‚ÆƒNƒIƒ“ƒ^ƒ€Q‚Ì“ü—Í
+	//ãƒ—ãƒ­ã‚»ã‚¹æ•°Nã¨ã‚¯ã‚ªãƒ³ã‚¿ãƒ Qã®å…¥åŠ›
 	cin >> N >> Q;
 	QueueData q(N);
 
@@ -80,18 +83,22 @@ void Queue()
 		int t = get<1>(r);
 		t -= Q;
 		if (t > 0) {
-			//c‚èŠÔ‚ª‚Ü‚¾‚ ‚éê‡‚ÍAÄ‚ÑƒLƒ…[‚É’Ç‰Á‚·‚é
+			//æ®‹ã‚Šæ™‚é–“ãŒã¾ã ã‚ã‚‹å ´åˆã¯ã€å†ã³ã‚­ãƒ¥ãƒ¼ã«è¿½åŠ ã™ã‚‹
 			q.Enqueue(make_tuple(get<0>(r), t));
 			sumtime += Q;
 		}
 		else
-		{//‚·‚×‚Ä‚ÌŠÔ‚ª‚È‚­‚È‚Á‚½‚çAo—Í‚·‚é
+		{//ã™ã¹ã¦ã®æ™‚é–“ãŒãªããªã£ãŸã‚‰ã€å‡ºåŠ›ã™ã‚‹
 			sumtime += get<1>(r);
 			cout << get<0>(r) << " " << sumtime << endl;
  		}
 	}
 	
 	
-	
+	return 0;
+}
+
+void Queue::TestGen()
+{
 }
 

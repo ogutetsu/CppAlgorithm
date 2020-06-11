@@ -1,3 +1,5 @@
+ï»¿#include "ShellSort.h"
+
 #include <functional>
 #include <iostream>
 #include <vector>
@@ -5,12 +7,12 @@
 using namespace std;
 
 
-void ShellSort()
+int ShellSort::Run()
 {
 	int cnt;
 	function<void(int[], int, int)> insertionSort = [&cnt](int* A, int N, int G)
 	{
-		//G‚ÍŠÔŠu
+		//Gã¯é–“éš”
 		for(int i = G; i < N; i++)
 		{
 			int value = A[i];
@@ -28,7 +30,7 @@ void ShellSort()
 	function<void(int[], int)> shellSort = [&cnt, insertionSort](int* A, int N)
 	{
 
-		//”—ñG‚Ìì¬
+		//æ•°åˆ—Gã®ä½œæˆ
 		vector<int> G;
 		for(int h = 1; ;)
 		{
@@ -37,7 +39,7 @@ void ShellSort()
 			h = 3 * h + 1;
 		}
 
-		//ŠÔŠuG‚ğw’è‚µ‚½‘}“üƒ\[ƒg
+		//é–“éš”Gã‚’æŒ‡å®šã—ãŸæŒ¿å…¥ã‚½ãƒ¼ãƒˆ
 		for(int i = G.size()-1; i >= 0; i--)
 		{
 			insertionSort(A, N, G[i]);
@@ -56,7 +58,7 @@ void ShellSort()
 	cnt = 0;
 	int N;
 	int A[100000];
-	cout << "ŒÂ”‚ğ“ü—Í -> ";
+	cout << "å€‹æ•°ã‚’å…¥åŠ› -> ";
 	cin >> N;
 
 	for (int i = 0; i < N; i++) cin >> A[i];
@@ -67,6 +69,12 @@ void ShellSort()
 
 	for (int i = 0; i < N; i++) cout << A[i] << " ";
 	cout << endl;
+
+	return 0;
 	
+}
+
+void ShellSort::TestGen()
+{
 }
 

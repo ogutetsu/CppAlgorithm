@@ -148,24 +148,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="CppAlgorithm.cpp" />
-    <ClCompile Include="InsertionSort.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="DataStructure\LinkedList.cpp" />
+    <ClCompile Include="DataStructure\Queue.cpp" />
+    <ClCompile Include="DataStructure\Stack.cpp" />
     <ClCompile Include="Order\MaximumProfit.cpp" />
-    <ClCompile Include="Queue.cpp" />
-    <ClCompile Include="SelectionSort.cpp" />
-    <ClCompile Include="ShellSort.cpp" />
-    <ClCompile Include="StableSort.cpp" />
-    <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="Sort\BubbleSort.cpp" />
+    <ClCompile Include="Sort\InsertionSort.cpp" />
+    <ClCompile Include="Sort\SelectionSort.cpp" />
+    <ClCompile Include="Sort\ShellSort.cpp" />
+    <ClCompile Include="Sort\StableSort.cpp" />
     <ClCompile Include="TestGen\DataStructure\LinkedListTestGen.cpp" />
     <ClCompile Include="TestGen\MaximumProfit\MaximumProfitTestGen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataStructure\LinkedList.h" />
+    <ClInclude Include="DataStructure\Queue.h" />
+    <ClInclude Include="DataStructure\Stack.h" />
     <ClInclude Include="DebugMenu.h" />
     <ClInclude Include="ExeBase.h" />
     <ClInclude Include="Order\MaximumProfit.h" />
     <ClInclude Include="ScopeTimer.h" />
+    <ClInclude Include="Sort\BubbleSort.h" />
+    <ClInclude Include="Sort\InsertionSort.h" />
+    <ClInclude Include="Sort\SelectionSort.h" />
+    <ClInclude Include="Sort\ShellSort.h" />
+    <ClInclude Include="Sort\StableSort.h" />
     <ClInclude Include="TestGen\DataStructure\LinkedListTestGen.h" />
     <ClInclude Include="TestGen\MaximumProfit\MaximumProfitTestGen.h" />
     <ClInclude Include="TestGen\TestGen.h" />

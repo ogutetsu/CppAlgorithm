@@ -66,7 +66,7 @@ void MaximumProfitTestGen::Test4()
 	ofstream of(file);
 
 	int N = 200'000;
-	int R = 10'000'000'000;
+	int R = 1'000'000'000;
 	of << N << endl;
 
 

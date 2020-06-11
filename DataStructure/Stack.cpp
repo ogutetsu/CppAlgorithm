@@ -1,3 +1,5 @@
+ï»¿#include "Stack.h"
+
 #include <functional>
 #include <iostream>
 
@@ -42,10 +44,10 @@ private:
 
 
 
-void Stack()
+int Stack::Run()
 {
 
-	cout << "“ü—Í—á" << endl << "1 2 + 3 4 - *" << endl;
+	cout << "å…¥åŠ›ä¾‹" << endl << "1 2 + 3 4 - *" << endl;
 	
 	
 	
@@ -78,7 +80,7 @@ void Stack()
 			v2 = s.Pop();
 			s.Push(v2 / v1);
 			break;
-		//”’l‚ÍƒXƒ^ƒbƒN‚ÖŠm•Û
+		//æ•°å€¤ã¯ã‚¹ã‚¿ãƒƒã‚¯ã¸ç¢ºä¿
 		default:
 			s.Push(atoi(in.c_str()));
 			break;
@@ -89,7 +91,12 @@ void Stack()
 	cout << s.Pop() << endl;
 
 	cin.clear();
-	
+
+	return 0;
+}
+
+void Stack::TestGen()
+{
 }
 
 

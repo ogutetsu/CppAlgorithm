@@ -1,4 +1,4 @@
-#include "MaximumProfit.h"
+ï»¿#include "MaximumProfit.h"
 
 #include <iostream>
 #include <algorithm>
@@ -14,30 +14,30 @@ int MaximumProfit::Run()
 {
 	int R[MAX], n;
 
-	cout << "ŒÂ”‚ğ“ü—Í -> ";
+	cout << "å€‹æ•°ã‚’å…¥åŠ› -> ";
 
 	cin >> n;
 
 	for (int i = 0; i < n; i++) cin >> R[i];
 
-	//‚Å‚«‚éŒÀ‚è‚ÌÅ¬’l
+	//ã§ãã‚‹é™ã‚Šã®æœ€å°å€¤
 	int maxv = -2'000'000'000;
 	int minv = R[0];
 
 	for (int i = 1; i < n; i++)
 	{
-		maxv = max(maxv, R[i] - minv);	//Å‘å’l‚ğXV
-		minv = min(minv, R[i]);		//‚±‚±‚Ü‚Å‚ÌÅ¬’l
+		maxv = max(maxv, R[i] - minv);	//æœ€å¤§å€¤ã‚’æ›´æ–°
+		minv = min(minv, R[i]);		//ã“ã“ã¾ã§ã®æœ€å°å€¤
 	}
 
-	cout << "Å‘å’l : " << maxv << endl;
+	cout << "æœ€å¤§å€¤ : " << maxv << endl;
 	return 0;
 }
 
 
 
 /*
- * §–ñ‚Í 2 <= N <= 200,000
+ * åˆ¶ç´„ã¯ 2 <= N <= 200,000
  * 1 <= R <= 10,000,000,000
  */
 void MaximumProfit::TestGen()
@@ -105,7 +105,7 @@ void MaximumProfit::Test4()
 	std::uniform_int_distribution<int> dist(0, R);
 	for (int i = 0; i < N; i++)
 	{
-		//ƒ‰ƒ“ƒ_ƒ€‚É”’l‚ğ‹‚ß‚é
+		//ãƒ©ãƒ³ãƒ€ãƒ ã«æ•°å€¤ã‚’æ±‚ã‚ã‚‹
 		of << dist(engine) << endl;
 	}
 

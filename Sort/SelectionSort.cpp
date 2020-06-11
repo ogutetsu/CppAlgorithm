@@ -1,4 +1,6 @@
-﻿#include <functional>
+﻿#include "SelectionSort.h"
+
+#include <functional>
 #include <iostream>
 
 using namespace std;
@@ -6,10 +8,9 @@ using namespace std;
 
 // O(N²)
 
-void SelectionSort()
+inline int SelectionSort::Run()
 {
-	function<int(int[], int)> sort = [](int* A, int N)
-	{
+	function<int(int[], int)> sort = [](int* A, int N)	{
 		int sw = 0;
 
 		for(int i = 0; i < N-1; i++)
@@ -48,7 +49,12 @@ void SelectionSort()
 	}
 	cout << endl;
 	cout << "交換回数 : " << sw << endl;
+
+	return 0;
 	
-	
+}
+
+void SelectionSort::TestGen()
+{
 }
 

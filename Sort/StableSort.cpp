@@ -1,3 +1,5 @@
+ï»¿#include "StableSort.h"
+
 #include <functional>
 #include <iostream>
 
@@ -7,7 +9,7 @@ using namespace std;
 struct Card { char suit, value; };
 
 
-void StableSort()
+int StableSort::Run()
 {
 
 	function<void(Card[], int)> Bubble = [](Card* C, int N)
@@ -43,8 +45,8 @@ void StableSort()
 	};
 
 
-	//‚Ç‚¿‚ç‚©‚ÉˆÀ’èƒ\[ƒgŒ‹‰Ê‚ğ“ü‚ê‚é‚±‚Æ‚Å‚»‚Ìƒe[ƒuƒ‹‚Æ”äŠr‚·‚é‚±‚Æ‚Å
-	//ˆÀ’è‚µ‚½ƒ\[ƒgŒ‹‰Ê‚©‚Ç‚¤‚©‚ª O(N)‚Å‚í‚©‚é
+	//ã©ã¡ã‚‰ã‹ã«å®‰å®šã‚½ãƒ¼ãƒˆçµæœã‚’å…¥ã‚Œã‚‹ã“ã¨ã§ãã®ãƒ†ãƒ¼ãƒ–ãƒ«ã¨æ¯”è¼ƒã™ã‚‹ã“ã¨ã§
+	//å®‰å®šã—ãŸã‚½ãƒ¼ãƒˆçµæœã‹ã©ã†ã‹ãŒ O(N)ã§ã‚ã‹ã‚‹
 	function<bool(Card[], Card[], int)> isStable = [](Card* C1, Card* C2, int N)
 	{
 		for(int i = 0; i < N; i++)
@@ -67,7 +69,7 @@ void StableSort()
 	Card C1[100], C2[100];
 	int N;
 
-	cout << "ŒÂ”‚ğ“ü—Í -> ";
+	cout << "å€‹æ•°ã‚’å…¥åŠ› -> ";
 	cin >> N;
 	for(int i = 0; i < N; i++)
 	{
@@ -79,10 +81,10 @@ void StableSort()
 	Selection(C2, N);
 
 	
-	Print(C1, N);	//ƒoƒuƒ‹ƒ\[ƒgŒ‹‰Ê
+	Print(C1, N);	//ãƒãƒ–ãƒ«ã‚½ãƒ¼ãƒˆçµæœ
 	cout << "Stable" << endl;
 	
-	Print(C2, N);	//‘I‘ğƒ\[ƒgŒ‹‰Ê
+	Print(C2, N);	//é¸æŠã‚½ãƒ¼ãƒˆçµæœ
 
 	bool stable = isStable(C1, C2, N);
 	if(stable)
@@ -93,7 +95,12 @@ void StableSort()
 	{
 		cout << "Not stable" << endl;
 	}
-		
+
+	return 0;
+}
+
+void StableSort::TestGen()
+{
 }
 
 

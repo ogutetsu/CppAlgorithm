@@ -43,34 +43,16 @@
     <Filter Include="ヘッダー ファイル\Order">
       <UniqueIdentifier>{69a5d938-a180-4bc2-8a60-0428410c2d2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Sort">
+      <UniqueIdentifier>{7b0adfe1-39b7-4a78-803c-b994a2099b9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\DataStructure">
+      <UniqueIdentifier>{a3a5802e-4518-4cbf-a95a-e0cf19d97e7f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppAlgorithm.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="InsertionSort.cpp">
-      <Filter>ソース ファイル\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="BubbleSort.cpp">
-      <Filter>ソース ファイル\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectionSort.cpp">
-      <Filter>ソース ファイル\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="StableSort.cpp">
-      <Filter>ソース ファイル\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="ShellSort.cpp">
-      <Filter>ソース ファイル\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="Stack.cpp">
-      <Filter>ソース ファイル\DataStructure</Filter>
-    </ClCompile>
-    <ClCompile Include="Queue.cpp">
-      <Filter>ソース ファイル\DataStructure</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkedList.cpp">
-      <Filter>ソース ファイル\DataStructure</Filter>
     </ClCompile>
     <ClCompile Include="TestGen\MaximumProfit\MaximumProfitTestGen.cpp">
       <Filter>ソース ファイル\TestGen\MaximumProfit</Filter>
@@ -80,6 +62,30 @@
     </ClCompile>
     <ClCompile Include="Order\MaximumProfit.cpp">
       <Filter>ソース ファイル\Order</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\InsertionSort.cpp">
+      <Filter>ソース ファイル\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\SelectionSort.cpp">
+      <Filter>ソース ファイル\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\ShellSort.cpp">
+      <Filter>ソース ファイル\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\StableSort.cpp">
+      <Filter>ソース ファイル\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\LinkedList.cpp">
+      <Filter>ソース ファイル\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\Queue.cpp">
+      <Filter>ソース ファイル\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\Stack.cpp">
+      <Filter>ソース ファイル\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort\BubbleSort.cpp">
+      <Filter>ソース ファイル\Sort</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +112,30 @@
     </ClInclude>
     <ClInclude Include="Order\MaximumProfit.h">
       <Filter>ヘッダー ファイル\Order</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort\BubbleSort.h">
+      <Filter>ヘッダー ファイル\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort\InsertionSort.h">
+      <Filter>ヘッダー ファイル\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort\SelectionSort.h">
+      <Filter>ヘッダー ファイル\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort\ShellSort.h">
+      <Filter>ヘッダー ファイル\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort\StableSort.h">
+      <Filter>ヘッダー ファイル\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure\LinkedList.h">
+      <Filter>ヘッダー ファイル\DataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure\Queue.h">
+      <Filter>ヘッダー ファイル\DataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure\Stack.h">
+      <Filter>ヘッダー ファイル\DataStructure</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
