@@ -98,5 +98,8 @@
     <ClInclude Include="TestGen\DataStructure\LinkedListTestGen.h">
       <Filter>ヘッダー ファイル\TestGen\DataStructure</Filter>
     </ClInclude>
+    <ClInclude Include="ExeBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

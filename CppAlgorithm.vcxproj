@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugMenu.h" />
+    <ClInclude Include="ExeBase.h" />
     <ClInclude Include="ScopeTimer.h" />
     <ClInclude Include="TestGen\DataStructure\LinkedListTestGen.h" />
     <ClInclude Include="TestGen\MaximumProfit\MaximumProfitTestGen.h" />
