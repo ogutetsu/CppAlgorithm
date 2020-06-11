@@ -4,22 +4,13 @@
 #include "DebugMenu.h"
 
 
-DEBUGEXTERN(MaximumProfit)
-DEBUGEXTERN_NOTEST(InsertionSort)
-DEBUGEXTERN_NOTEST(BubbleSort)
-DEBUGEXTERN_NOTEST(SelectionSort)
-DEBUGEXTERN_NOTEST(StableSort)
-DEBUGEXTERN_NOTEST(ShellSort)
-DEBUGEXTERN_NOTEST(Stack)
-DEBUGEXTERN_NOTEST(Queue)
-DEBUGEXTERN(LinkedList)
-
 int main()
 {
     DebugMenu menu;
 
 	menu.SetExitNumber(99);
 
+	/*
 	menu.AddMenu(DEBUGTUPLE(1, MaximumProfit));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(2, InsertionSort));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(3, BubbleSort));
@@ -29,7 +20,7 @@ int main()
 	menu.AddMenu(DEBUGTUPLE_NOTEST(7, Stack));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(8, Queue));
 	menu.AddMenu(DEBUGTUPLE(9, LinkedList));
-
+	*/
 
 	menu.Exec();
 

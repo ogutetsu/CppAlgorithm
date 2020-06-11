@@ -4,32 +4,34 @@
 #include <tuple>
 #include <vector>
 
+#include "ExeBase.h"
 
 #include "TestGen/TestGen.h"
 
 
 
-//関数名とテストメソッドのextern宣言するdefine
-#define DEBUGEXTERN(func) extern void func(); extern void func##Test ();
-//DEBUGEXTERNのTestメソッドを宣言しないもの 実装していないのにexternするのも気持ち悪いので用意してます
-#define DEBUGEXTERN_NOTEST(func) extern void func();
+#define MAKETUPLE(no, execlass) std::make_tuple((no), (IExec*)(new execlass( #execlass )))
 
 
-#define DEBUGTUPLE(no, func) std::make_tuple((no), #func, func, func##Test, (ITestGen*)(new func##TestGen ()) )
+typedef std::tuple<int, IExec*> exetype;
 
-//テストメソッドを使用しない場合 (出来るだけテストメソッドの実装は行うべき)
-#define DEBUGTUPLE_NOTEST(no, func) std::make_tuple((no), #func, func, nullptr, nullptr )
+class Exit : public IExec
+{
+public:
+	Exit(std::string name) : IExec(name) {}
+	int Run() override { return 0; }
+};
 
-
-typedef std::tuple<int, std::string, std::function<void(void)>, std::function<void(void)>, ITestGen*> callname;
 
 class DebugMenu
 {
 public:
-	void AddMenu(callname t)
+
+	void AddMenu(exetype t)
 	{
-		table.push_back(t);
+		exeTable.push_back(t);
 	}
+	
 
 	void SetExitNumber(int num)
 	{
@@ -38,12 +40,12 @@ public:
 
 	void Exec()
 	{
-		AddMenu(std::make_tuple(exitNumber, "Exit", nullptr, nullptr, nullptr));
+		AddMenu(MAKETUPLE(exitNumber, Exit));
 		while (1)
 		{
-			for (auto t : table)
+			for (auto t : exeTable)
 			{
-				std::cout << std::get<0>(t) << " : " << std::get<1>(t) << std::endl;
+				std::cout << std::get<0>(t) << " : " << std::get<1>(t)->GetName() << std::endl;
 			}
 			int s;
 			int op;
@@ -52,33 +54,33 @@ public:
 			std::cin >> s;
 			if (s == exitNumber) break;	//exitNumberが入力されたら終了
 			
-			//Optionは 0は実行 1はテスト実行にする
+			//0は実行 1はテスト実行にする
 			std::cout << "Run or Test(0..Run 1..Test) -> ";
 			std::cin >> op;
 			
 			
-			auto f = std::find_if(table.begin(), table.end(),
+			auto f = std::find_if(exeTable.begin(), exeTable.end(),
 				[=](auto t)
 			{
 				return s == (int)std::get<0>(t);
 			});
 
-			if (f != table.end())
+			if (f != exeTable.end())
 			{
 				auto number = std::get<0>(*f);
 
 				std::cout << "select : " << std::get<1>(*f) << std::endl;
 				if (op == 0)
 				{//実行
-					if (std::get<2>(*f) != nullptr) std::get<2>(*f)();
+					std::get<1>(*f)->Run();
 				}
 				else if(op == 1)
 				{//テストメソッド実行
-					if (std::get<3>(*f) != nullptr) std::get<3>(*f)();
+					std::get<1>(*f)->TestRun();
 				}
 				else if(op == 9)
 				{//テスト生成
-					if (std::get<4>(*f) != nullptr) std::get<4>(*f)->Generate();
+					std::get<1>(*f)->TestGen();
 				}
 			}
 			std::cout << std::endl;
@@ -87,8 +89,7 @@ public:
 
 
 private:
-
-	std::vector<callname> table;
+	std::vector<exetype> exeTable;
 
 	int exitNumber = 99;
 
