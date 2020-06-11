@@ -152,7 +152,7 @@
     <ClCompile Include="CppAlgorithm.cpp" />
     <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="LinkedList.cpp" />
-    <ClCompile Include="MaximumProfit.cpp" />
+    <ClCompile Include="Order\MaximumProfit.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
     <ClCompile Include="ShellSort.cpp" />
@@ -164,6 +164,7 @@
   <ItemGroup>
     <ClInclude Include="DebugMenu.h" />
     <ClInclude Include="ExeBase.h" />
+    <ClInclude Include="Order\MaximumProfit.h" />
     <ClInclude Include="ScopeTimer.h" />
     <ClInclude Include="TestGen\DataStructure\LinkedListTestGen.h" />
     <ClInclude Include="TestGen\MaximumProfit\MaximumProfitTestGen.h" />

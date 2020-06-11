@@ -40,13 +40,13 @@
     <Filter Include="ソース ファイル\TestGen\DataStructure">
       <UniqueIdentifier>{e80070ab-ac9a-4b42-9164-48570223bed7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Order">
+      <UniqueIdentifier>{69a5d938-a180-4bc2-8a60-0428410c2d2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppAlgorithm.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="MaximumProfit.cpp">
-      <Filter>ソース ファイル\Order</Filter>
     </ClCompile>
     <ClCompile Include="InsertionSort.cpp">
       <Filter>ソース ファイル\Sort</Filter>
@@ -78,6 +78,9 @@
     <ClCompile Include="TestGen\DataStructure\LinkedListTestGen.cpp">
       <Filter>ソース ファイル\TestGen\DataStructure</Filter>
     </ClCompile>
+    <ClCompile Include="Order\MaximumProfit.cpp">
+      <Filter>ソース ファイル\Order</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugMenu.h">
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="ExeBase.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Order\MaximumProfit.h">
+      <Filter>ヘッダー ファイル\Order</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

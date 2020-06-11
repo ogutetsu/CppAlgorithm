@@ -2,6 +2,7 @@
 //
 
 #include "DebugMenu.h"
+#include "Order/MaximumProfit.h"
 
 
 int main()
@@ -10,6 +11,7 @@ int main()
 
 	menu.SetExitNumber(99);
 
+	menu.AddMenu(MAKETUPLE(1, MaximumProfit));
 	/*
 	menu.AddMenu(DEBUGTUPLE(1, MaximumProfit));
 	menu.AddMenu(DEBUGTUPLE_NOTEST(2, InsertionSort));

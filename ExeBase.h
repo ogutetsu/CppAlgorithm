@@ -6,6 +6,7 @@
 
 #include "ScopeTimer.h"
 
+#define EXE_CONSTRUCTOR(className) className( std::string name = #className ) : IExec(name) {}
 
 class IExec
 {
@@ -21,7 +22,7 @@ public:
 	void TestRun()
 	{
 		using namespace std::filesystem;
-		directory_iterator dit("TestResource/" + name_ + "/"), end;
+		directory_iterator dit(TestDir + "/" + name_ + "/"), end;
 		std::error_code err;
 		for (; dit != end && !err; dit.increment(err))
 		{
@@ -43,10 +44,23 @@ public:
 	}
 	
 	virtual void TestGen(){}
-	
+
+
+
+	std::string TestFileMaker(std::string basename, int suffix)
+	{
+		std::string res;
+		res = TestDir + "/" + basename + "/" + basename + "Test" + std::to_string(suffix);
+
+		return res;
+	}
+
 
 private:
 	std::string name_;
+
+	std::string TestDir = "TestResource";
+
 	
 };
 
