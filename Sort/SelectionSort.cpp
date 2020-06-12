@@ -8,7 +8,7 @@ using namespace std;
 
 // O(N²)
 
-inline int SelectionSort::Run()
+int SelectionSort::Run()
 {
 	function<int(int[], int)> sort = [](int* A, int N)	{
 		int sw = 0;
