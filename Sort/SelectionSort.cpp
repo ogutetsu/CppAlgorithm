@@ -56,5 +56,17 @@ int SelectionSort::Run()
 
 void SelectionSort::TestGen()
 {
+	Test1();
+}
+
+void SelectionSort::Test1()
+{
+	string file = TestFileMaker(1);
+
+	ofstream of(file);
+
+	of << 6 << endl;
+	of << "5 6 4 2 1 3" << endl;
+	
 }
 
