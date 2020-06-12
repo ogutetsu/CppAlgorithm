@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <string>
 #include <filesystem>
 #include <fstream>
@@ -52,8 +52,16 @@ public:
 
 	std::string TestFileMaker(std::string basename, int suffix)
 	{
+		using namespace std::filesystem;
 		std::string res;
-		res = TestDir + "/" + basename + "/" + basename + "Test" + std::to_string(suffix);
+		std::string Dir = TestDir + "/" + basename + "/";
+		//指定されたディレクトリがなければ作成する
+		if(!exists(Dir))
+		{
+			create_directory(Dir);
+		}
+		
+		res = Dir + basename + "Test" + std::to_string(suffix);
 
 		return res;
 	}
