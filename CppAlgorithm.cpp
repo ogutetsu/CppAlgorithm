@@ -3,6 +3,15 @@
 
 #include "DebugMenu.h"
 #include "Order/MaximumProfit.h"
+#include "Sort/InsertionSort.h"
+#include "Sort/SelectionSort.h"
+#include "Sort/BubbleSort.h"
+#include "Sort/ShellSort.h"
+#include "Sort/StableSort.h"
+#include "DataStructure/Stack.h"
+#include "DataStructure/Queue.h"
+#include "DataStructure/LinkedList.h"
+
 
 
 int main()
@@ -12,17 +21,14 @@ int main()
 	menu.SetExitNumber(99);
 
 	menu.AddMenu(MAKETUPLE(1, MaximumProfit));
-	/*
-	menu.AddMenu(DEBUGTUPLE(1, MaximumProfit));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(2, InsertionSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(3, BubbleSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(4, SelectionSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(5, StableSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(6, ShellSort));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(7, Stack));
-	menu.AddMenu(DEBUGTUPLE_NOTEST(8, Queue));
-	menu.AddMenu(DEBUGTUPLE(9, LinkedList));
-	*/
+	menu.AddMenu(MAKETUPLE(2, InsertionSort));
+	menu.AddMenu(MAKETUPLE(3, BubbleSort));
+	menu.AddMenu(MAKETUPLE(4, SelectionSort));
+	menu.AddMenu(MAKETUPLE(5, StableSort));
+	menu.AddMenu(MAKETUPLE(6, ShellSort));
+	menu.AddMenu(MAKETUPLE(7, Stack));
+	menu.AddMenu(MAKETUPLE(8, Queue));
+	menu.AddMenu(MAKETUPLE(9, LinkedList));
 
 	menu.Exec();
 
