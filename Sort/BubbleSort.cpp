@@ -54,5 +54,15 @@ int BubbleSort::Run()
 
 void BubbleSort::TestGen()
 {
+	Test1();
+}
+
+void BubbleSort::Test1()
+{
+	string file = TestFileMaker(1);
+
+	ofstream of(file);
+	of << 5 << endl;
+	of << "5 3 2 4 1" << endl;
 }
 

@@ -14,6 +14,6 @@ public:
 
 
 private:
-	
+	void Test1();
 };
 
