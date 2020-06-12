@@ -57,6 +57,20 @@ int InsertionSort::Run()
 
 void InsertionSort::TestGen()
 {
+	Test1();
+}
+
+void InsertionSort::Test1()
+{
+	string file = TestFileMaker(1);
+
+	ofstream of(file);
+
+	of << 6 << endl;
+	of << "5 2 4 6 1 3" << endl;
+
+
+	
 }
 
 
