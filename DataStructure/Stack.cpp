@@ -97,6 +97,16 @@ int Stack::Run()
 
 void Stack::TestGen()
 {
+	Test1();
+}
+
+void Stack::Test1()
+{
+	string file = TestFileMaker(1);
+
+	ofstream of(file);
+
+	of << "1 2 + 3 4 - *" << endl;
 }
 
 
