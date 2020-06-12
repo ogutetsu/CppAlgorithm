@@ -100,5 +100,21 @@ int Queue::Run()
 
 void Queue::TestGen()
 {
+	Test1();
+}
+
+void Queue::Test1()
+{
+	string file = TestFileMaker(1);
+
+	ofstream of(file);
+
+	of << "5 100" << endl;
+	of << "p1 150" << endl;
+	of << "p2 80" << endl;
+	of << "p3 200" << endl;
+	of << "p4 350" << endl;
+	of << "p5 20" << endl;
+	
 }
 
