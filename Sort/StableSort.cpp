@@ -101,6 +101,18 @@ int StableSort::Run()
 
 void StableSort::TestGen()
 {
+	Test1();
+}
+
+void StableSort::Test1()
+{
+	string file = TestFileMaker(1);
+
+	ofstream of(file);
+
+	of << 5 << endl;
+	of << "H4 C9 S4 D2 C3" << endl;
+	
 }
 
 
