@@ -45,7 +45,10 @@ public:
 	
 	virtual void TestGen(){}
 
-
+	std::string TestFileMaker(int suffix)
+	{
+		return TestFileMaker(name_, suffix);
+	}
 
 	std::string TestFileMaker(std::string basename, int suffix)
 	{
