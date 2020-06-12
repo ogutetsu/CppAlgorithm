@@ -76,5 +76,20 @@ int ShellSort::Run()
 
 void ShellSort::TestGen()
 {
+	Test1();
+}
+
+void ShellSort::Test1()
+{
+	string file = TestFileMaker(1);
+
+	ofstream of(file);
+
+	of << 5 << endl;
+	of << 5 << endl;
+	of << 1 << endl;
+	of << 4 << endl;
+	of << 3 << endl;
+	of << 2 << endl;
 }
 
